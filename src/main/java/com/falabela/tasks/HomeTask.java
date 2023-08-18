@@ -2,11 +2,14 @@ package com.falabela.tasks;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import org.openqa.selenium.Keys;
+import static com.falabela.ui.HomeUI.ICON_SEARCH;
 import static com.falabela.ui.HomeUI.TXT_SEARCH;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import com.falabela.utils.Datadriver;
+import org.openqa.selenium.Keys;
+
 import java.util.Map;
 
 
@@ -21,9 +24,11 @@ public class HomeTask implements Task {
 
         actor.attemptsTo(
 
-                Enter.theValue(searchProduct).into(TXT_SEARCH).thenHit(Keys.ENTER)
+                Enter.theValue(searchProduct).into(TXT_SEARCH).thenHit(Keys.ARROW_DOWN,Keys.ENTER)
 
         );
+
+
 
     }
 
