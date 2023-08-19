@@ -1,8 +1,10 @@
 package com.falabela.tasks;
 
+import com.falabela.interactions.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+
 import static com.falabela.ui.ProductDetailsUI.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -17,11 +19,10 @@ public class ProductDetailsTask implements Task {
 
         actor.attemptsTo(
 
-                ScrollTask.byPixels(50, BTN_ADDTOCART),
+                Scroll.down(),
                 Click.on(BTN_INCREASEQUANTITY),
                 Click.on(BTN_INCREASEQUANTITY),
                 Click.on(BTN_ADDTOCART)
-
         );
 
 
